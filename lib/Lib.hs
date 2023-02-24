@@ -316,7 +316,7 @@ indexInGhcid = do
 serverDef :: ServerDefinition ()
 serverDef =
   ServerDefinition
-    { onConfigurationChange = const $ pure $ Left "Changing configuration is not supported",
+    { onConfigurationChange = id,
       doInitialize = Lib.doInitialize,
       staticHandlers =
         mconcat
